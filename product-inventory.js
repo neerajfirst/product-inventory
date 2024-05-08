@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 // MySQL connection configuration
 const connection = mysql.createConnection({
-  host: 'dpirds.clmcwsesapgy.us-east-1.rds.amazonaws.com',
+  host: 'dpirds.cx8a8ak8wme1.us-east-1.rds.amazonaws.com',
   user: 'admin',
   password: 'scalable123',
   database: 'DPIDB'
@@ -15,6 +15,16 @@ const connection = mysql.createConnection({
 
 // Connect to MySQL
 connection.connect();
+
+const axios = require('axios');
+
+// axios.get('http://localhost:3002/api/get/payments')
+//   .then(response => {
+//     console.log(response.data);
+//   })
+//   .catch(error => {
+//     console.error(error);
+//   });
 
 
 app.get('/api/get/products', (req, res) => {
